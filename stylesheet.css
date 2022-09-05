@@ -1,0 +1,218 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+#name-owner{
+    font-family: 'Brush Script MT', cursive;
+    margin-left: 50px;
+}
+
+div {
+    z-index: 16;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: black;
+    z-index: 16;
+}
+
+nav > ul{
+    list-style-type: none;
+}
+
+nav > ul > li {
+    display: inline;
+    color: white;
+    margin-left: 50px;
+}
+
+ul > li > a{
+    text-decoration: none;
+}
+
+a{
+    color: white;
+}
+
+li a:hover{
+    color: cyan;
+}
+
+#last-item{
+    margin-right: 50px;
+}
+
+#body{
+    margin: 50px 100px 50px 100px;
+}
+
+.body-flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.body-flex-contact{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@keyframes move_wave {
+    0% {
+        transform: translateX(0) translateZ(0) scaleY(1)
+    }
+    50% {
+        transform: translateX(-25%) translateZ(0) scaleY(0.55)
+    }
+    100% {
+        transform: translateX(-50%) translateZ(0) scaleY(1)
+    }
+}
+.waveWrapper {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+}
+.waveWrapperInner {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    bottom: -1px;
+    background-image: linear-gradient(to top, #86377b 20%, #27273c 80%);
+}
+.bgTop {
+    z-index: 15;
+    opacity: 0.5;
+}
+.bgMiddle {
+    z-index: 10;
+    opacity: 0.75;
+}
+.bgBottom {
+    z-index: 5;
+}
+.wave {
+    position: absolute;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background-repeat: repeat no-repeat;
+    background-position: 0 bottom;
+    transform-origin: center bottom;
+}
+.waveTop {
+    background-size: 50% 100px;
+}
+.waveAnimation .waveTop {
+    animation: move-wave 3s;
+    -webkit-animation: move-wave 3s;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+}
+.waveMiddle {
+    background-size: 50% 120px;
+}
+.waveAnimation .waveMiddle {
+    animation: move_wave 10s linear infinite;
+}
+.waveBottom {
+    background-size: 50% 100px;
+}
+.waveAnimation .waveBottom {
+    animation: move_wave 15s linear infinite;
+}
+
+#blink {
+    display: inline;
+    font-size: 150px;
+    animation: 2s linear infinite condemned_blink_effect;
+}
+
+#finki-link{
+    color: white;
+}
+
+.body-flex > div{
+    font-size: 30px;
+}
+
+@keyframes condemned_blink_effect {
+    0% {
+        visibility: hidden;
+    }
+    50% {
+        visibility: hidden;
+    }
+    100% {
+        visibility: visible;
+    }
+}
+
+.m-scroll {
+    display: flex;
+    position: relative;
+    width: 600px;
+    height: 400px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.lang-scroll {
+    display: flex;
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.m-scroll__title {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    white-space: nowrap;
+    transform: scale(2);
+    transition: all 1s ease;
+}
+.m-scroll > div {
+      display: flex;
+      animation: scrollText 10s infinite linear;
+}
+
+.lang-scroll > div {
+    display: flex;
+    animation: scrollLanguages 20s infinite linear;
+}
+
+
+/* Disabled
+div:hover {
+  animation-play-state: paused;
+} */
+
+@keyframes scrollText {
+    from   { transform: translateY(500%); }
+    to { transform: translateY(-400%); }
+}
+
+@keyframes scrollLanguages {
+    from   { transform: translateY(100%); }
+    to { transform: translateY(-200%); }
+}
