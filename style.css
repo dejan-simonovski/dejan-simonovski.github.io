@@ -204,64 +204,20 @@ span{
     color: black;
 }
 
-.text-animation {
-    font-size: 34px;
-    font-weight: 600;
-    min-width: 280px;
+#text-wrapper {
+    min-height: 1.2em;
+    white-space: nowrap;
 }
 
-.text-animation span {
-    position: relative;
-}
-
-.text-animation span::before {
-    content: "Software Engineer";
+#text {
     color: var(--main-color);
-    animation: words 20s infinite;
+    font-size: 6rem;
 }
 
-.text-animation span::after {
-    content: "";
-    background-color: var(--bg-color);
-    position: absolute;
-    width: calc(100% + 8px);
-    height: 100%;
-    border-left: 3px solid var(--bg-color);
-    right: -8px;
-    animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
-}
-
-@keyframes cursor {
-    to{
-        border-left: 2px solid var(--main-color);
-    }
-}
-
-@keyframes words {
-    0%,20%{
-        content: "Full Stack Developer"
-    }
-    21%,40%{
-        content: "Software Engineer"
-    }
-    41%,60%{
-        content: "Mobile App Developer"
-    }
-    61%,80%{
-        content: "Web Developer"
-    }
-    81%,100%{
-        content: "Problem Solver"
-    }
-}
-
-@keyframes typing {
-    10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95% {
-        width: 0;
-    }
-    5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85% {
-        width: calc(100% + 8px)
-    }
+#text::after {
+    content: "|";
+    animation: blink 0.8s steps(1) infinite;
+    color: white; /* You can customize this */
 }
 
 .heading {
@@ -621,6 +577,12 @@ span{
 }
 
 @media(max-width: 991px) {
+
+    .home-content h1 {
+        font-size: 6rem;
+        margin-top: 3rem;
+    }
+
     header{
         padding: 2rem 3%
     }
@@ -661,6 +623,12 @@ span{
 
     .footer {
         padding: 2rem 3%;
+    }
+    
+
+
+    #text {
+        font-size: 4rem;
     }
 }
 @media(max-width: 895px) {
@@ -703,7 +671,7 @@ span{
     }
 
     .home-content h1 {
-        font-size: 8rem;
+        font-size: 6rem;
         margin-top: 3rem;
     }
 

@@ -25,3 +25,43 @@ menuIcon.onclick = () => {
     menuIcon.classList.toggle('bx-x');
     navbar.classList.toggle('active');
 };
+
+const texts = [
+  "Full Stack Developer",
+  "Software Engineer",
+  "Mobile App Developer",
+  "Web Developer",
+  "Problem Solver"
+];
+
+let textIndex = 0;
+let charIndex = 0;
+let currentText = texts[textIndex];
+let isDeleting = false;
+
+function type() {
+  const display = document.getElementById("text");
+
+  display.textContent = currentText.substring(0, charIndex);
+
+  if (!isDeleting && charIndex < currentText.length) {
+    charIndex++;
+    setTimeout(type, 100);
+  }
+  else if (isDeleting && charIndex > 0) {
+    charIndex--;
+    setTimeout(type, 50);
+  }
+  else if (!isDeleting && charIndex === currentText.length) {
+    isDeleting = true;
+    setTimeout(type, 1000);
+  }
+  else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    textIndex = (textIndex + 1) % texts.length;
+    currentText = texts[textIndex];
+    setTimeout(type, 300);
+  }
+}
+
+type();
