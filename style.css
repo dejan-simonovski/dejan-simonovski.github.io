@@ -201,9 +201,9 @@ span{
     color: black;
 }
 
-#text-wrapper {
-    min-height: 1.2em;
-    white-space: nowrap;
+#text-wrapper { 
+    height: 8rem; 
+    white-space: nowrap; 
 }
 
 #text {
