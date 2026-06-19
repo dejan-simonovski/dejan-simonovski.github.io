@@ -65,7 +65,7 @@ function type() {
         setTimeout(type, 50);
     } else if (!isDeleting && charIndex === currentText.length) {
         isDeleting = true;
-        setTimeout(type, 1000);
+        setTimeout(type, 1200);
     } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
         textIndex = (textIndex + 1) % texts.length;
@@ -75,9 +75,7 @@ function type() {
 }
 type();
 
-const revealTargets = document.querySelectorAll(
-    '.timeline-item, .service-box, .project-card, .heading, .contact form'
-);
+const revealTargets = document.querySelectorAll('.log-item, .service-box, .heading, .contact form');
 
 if (prefersReducedMotion) {
     revealTargets.forEach(el => el.classList.add('revealed'));
