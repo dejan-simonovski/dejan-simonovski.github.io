@@ -45,7 +45,7 @@ navLinks.forEach(link => {
 const texts = [
   "Full Stack Developer",
   "Software Engineer",
-  "Mobile App Developer",
+  "Mobile Developer",
   "Web Developer",
   "Problem Solver"
 ];

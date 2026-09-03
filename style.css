@@ -843,9 +843,18 @@ span{
         color: white;
     }
 
+    section {
+        width: 100%;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
     .home {
         flex-direction: column-reverse;
-        margin: 5rem 4rem;
+        margin: 0;
+        width: 100%;
+        padding-left: 2rem;
+        padding-right: 2rem;
     }
 
     .home-content h3 {
@@ -866,12 +875,23 @@ span{
         width: 56vw;
     }
 
+    .timeline-items,
+    .services-container {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+    }
+
     .services h2 {
         margin-bottom: 3rem;
     }
 
     .services-container {
         grid-template-columns: repeat(1,1fr);
+    }
+
+    .service-box {
+        width: 100%;
     }
 
      #text {
