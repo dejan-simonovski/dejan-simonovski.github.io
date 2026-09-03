@@ -608,7 +608,7 @@ span{
 
 .contact form {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     gap: 3rem;
     margin: 5rem auto;
@@ -866,9 +866,14 @@ span{
 
     .home {
         flex-direction: column-reverse;
+        justify-content: flex-end;
         margin: 0;
         width: 100%;
-        padding: 8rem 1.5rem 6rem;
+        padding: 20rem 1.5rem 6rem;
+    }
+
+    .home-content {
+        flex: 0 0 auto;
     }
 
     .home-content h3 {
@@ -887,6 +892,7 @@ span{
 
     .home-img img {
         width: 56vw;
+        top: 0;
     }
 
     .heading {
