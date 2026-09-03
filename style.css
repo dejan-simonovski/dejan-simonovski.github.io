@@ -813,6 +813,11 @@ span{
 }
 
 @media(max-width: 895px) {
+    html, body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
     #menu-icon {
         display: block;
     }
@@ -843,10 +848,14 @@ span{
         color: white;
     }
 
-    section {
-        width: 100%;
+    section,
+    .footer {
+        width: 100vw;
+        max-width: 100vw;
+        margin-left: calc(50% - 50vw);
         padding-left: 2rem;
         padding-right: 2rem;
+        box-sizing: border-box;
     }
 
     .home {
@@ -894,7 +903,7 @@ span{
         width: 100%;
     }
 
-     #text {
+    #text {
         font-size: 3rem;
     }
 }
