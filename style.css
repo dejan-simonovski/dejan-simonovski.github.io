@@ -196,8 +196,25 @@ span{
 }
 
 .home-img {
+    position: relative;
     border-radius: 50%;
     flex: 0 0 auto;
+}
+
+.home-img::before {
+    content: '';
+    position: absolute;
+    inset: -3rem;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(10, 132, 255, 0.5) 0%, rgba(191, 90, 242, 0.35) 45%, transparent 72%);
+    filter: blur(25px);
+    pointer-events: none;
+    animation: glow-pulse 4s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+    0%, 100% { opacity: 0.7; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.08); }
 }
 
 .home-img img {
@@ -869,11 +886,13 @@ span{
         justify-content: flex-end;
         margin: 0;
         width: 100%;
-        padding: 9rem 1.5rem 6rem;
+        padding: 14.5rem 1.5rem 4rem;
+        gap: 2rem;
     }
 
     .home-content {
         flex: 0 0 auto;
+        margin-top: 0;
     }
 
     .home-content h3 {
